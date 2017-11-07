@@ -98,6 +98,6 @@ The whole idea of the iterator is to provide an access to a private aggregated d
 
 + [Cycles in a Linked List](https://www.youtube.com/watch?v=MFOAbpfrJ8g)
 
-+ [My Go Implement LinkedList]()
++ [My Go Implement LinkedList](https://github.com/pieceofr/linkedList)
 
 ###### tags: `wwc` `cracking the code` `linked lists`

@@ -141,6 +141,11 @@ func (l *LinkedList)IsCircular() (bool, error) {
 	return false, nil
 }
 
+
+func (i *LinkedList)GetIterator() (ListIterator) {
+	return ListIterator{nextNode:i.head}
+}
+
 func (l *LinkedList)PrintList() {
 	if l == nil || l.head == nil {
 		return

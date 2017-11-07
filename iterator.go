@@ -7,8 +7,8 @@ type ListIterator struct {
 	nextNode *Node	
 }
 
-func (i *ListIterator)New(list LinkedList) (ListIterator) {
-	return ListIterator{nextNode:list.head}
+func  (i *ListIterator)GetElement() *Node {
+	return i.nextNode
 }
 
 func  (i *ListIterator)Next() *Node {
