@@ -3,18 +3,18 @@ package linkedlist
 type INTVAL int
 type STRVAL string
 
-type ListVal interface {
-	equal(ListVal) bool
+type NodeType interface {
+	equal(NodeType) bool
 }
 
-func (i INTVAL)equal(val ListVal) bool {
+func (i INTVAL)equal(val NodeType) bool {
 	if int(i) == int(val.(INTVAL)) {
 		return true
 	}
 	return false
 }
 
-func (s STRVAL)equal(val ListVal) bool {
+func (s STRVAL)equal(val NodeType) bool {
 	if string(s) == string(val.(STRVAL)) {
 		return true
 	}
@@ -26,7 +26,7 @@ type MyType struct {
 	mystruct Node
 }
 
-func (m MyType)equal(val ListVal) bool {
+func (m MyType)equal(val NodeType) bool {
 	if m.myvalue == val.(MyType).myvalue {
 		return true
 	}

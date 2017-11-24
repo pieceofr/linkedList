@@ -1,7 +1,5 @@
 package linkedlist
 
-import "errors"
-
 /*I do'nt have testing for this one yet*/
 type ListIterator struct {
 	nextNode *Node	
@@ -19,13 +17,10 @@ func  (i *ListIterator)Next() *Node {
 	return i.nextNode
 }
 
-func  (i *ListIterator)hasNext() (bool, error) {
-	if i == nil {
-		return false, errors.New("ListIterator is not initialized")
-	}
+func  (i *ListIterator)hasNext() bool {
 	if i.nextNode.next == nil	{
-		return false, nil
+		return false
 	} else {
-		return true, nil
+		return true
 	}
 }

@@ -174,7 +174,7 @@ func TestIsCircular(t *testing.T) {
 	}
 }
 
-func TestListVal(t *testing.T) {
+func TestNodeType(t *testing.T) {
 	testint1 := INTVAL(1)
 	testint2 := INTVAL(1)
 	testint3 := INTVAL(2)

@@ -13,10 +13,10 @@ type MyType struct {
 }
 ```
 
-You need to implement **equal method** to fullfill **ListVal interface**
+You need to implement **equal method** to fullfill **NodeType interface**
 
 ```
-func (m MyType)equal(val ListVal) bool {
+func (m MyType)equal(val NodeType) bool {
 	if m.myvalue == val.(MyType).myvalue {
 		return true
 	}
@@ -24,7 +24,7 @@ func (m MyType)equal(val ListVal) bool {
 }
 ```
 
-Finally, doing your testing on **linkedlist_test.go** and check **func TestListVal(t *testing.T)**, you can do the following test
+Finally, doing your testing on **linkedlist_test.go** and check **func TestNodeType(t *testing.T)**, you can do the following test
 
 ```
 testMyType1 := MyType{myvalue:1, mystruct:Node{value:INTVAL(5)}}

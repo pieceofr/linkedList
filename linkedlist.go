@@ -7,14 +7,14 @@ import (
 
 type Node struct {
 	next *Node
-	value ListVal
+	value NodeType
 }
 
 type LinkedList struct {
 	head *Node
 }
 
-func (l *LinkedList)AddFirst(data ListVal) error {
+func (l *LinkedList)AddFirst(data NodeType) error {
 	if l == nil {
 		return errors.New("LinkedList is not initialized")
 	}
@@ -41,7 +41,7 @@ func (l *LinkedList)Traverse() (count int, tail *Node) {
 	return count, tail
 }
 
-func (l *LinkedList)AddLast(data ListVal) error {
+func (l *LinkedList)AddLast(data NodeType) error {
 	if l == nil {
 		return errors.New("LinkedList is not initialized")
 	}
@@ -55,7 +55,7 @@ func (l *LinkedList)AddLast(data ListVal) error {
 	return nil
 }
 
-func (l *LinkedList)AddAfter(target ListVal, data ListVal) error {
+func (l *LinkedList)AddAfter(target NodeType, data NodeType) error {
 	if l == nil {
 		return errors.New("LinkedList is not initialized")
 	}
@@ -72,7 +72,7 @@ func (l *LinkedList)AddAfter(target ListVal, data ListVal) error {
 	return errors.New("No Target Node Found")
 }
 
-func (l *LinkedList)AddBefore(target ListVal, data ListVal) error {
+func (l *LinkedList)AddBefore(target NodeType, data NodeType) error {
 	if l == nil {
 		return errors.New("LinkedList is not initialized")
 	}
@@ -98,7 +98,7 @@ func (l *LinkedList)AddBefore(target ListVal, data ListVal) error {
 	return errors.New("No Target Node Found")
 }
 
-func (l *LinkedList)Delete(target ListVal) error {
+func (l *LinkedList)Delete(target NodeType) error {
 	if l == nil {
 		return errors.New("LinkedList is not initialized")
 	}
