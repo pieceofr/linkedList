@@ -17,12 +17,20 @@ func TestAddFirst(t *testing.T) {
 		t.Error("LinkedList Is Not Create")
 	}
 
-	testerror := l.AddFirst(INTVAL(1))
-	if testerror != nil {
-		t.Fatal("Failure")
+	err := l.AddFirst(INTVAL(1))
+	if err != nil {
+		t.Error("Couldn't add value")
 	}
-	testerror = l.AddFirst(INTVAL(2))
-	testerror = l.AddFirst(INTVAL(3))
+
+	err = l.AddFirst(INTVAL(2))
+	if err != nil {
+		t.Error("Couldn't add value")
+	}
+
+	err = l.AddFirst(INTVAL(3))
+	if err != nil {
+		t.Error("Couldn't add value")
+	}
 
 	if !l.head.value.equal(INTVAL(3)) || !l.head.next.value.equal(INTVAL(2)) || !l.head.next.next.value.equal(INTVAL(1)) {
 		t.Error("Add Failure")
@@ -37,9 +45,20 @@ func TestTraverse(t *testing.T) {
 		t.Error("count should be 0 and last node should be nil")
 	}
 
-	l.AddFirst(INTVAL(1))
-	l.AddFirst(INTVAL(2))
-	l.AddFirst(INTVAL(3))
+	err := l.AddFirst(INTVAL(1))
+	if err != nil {
+		t.Error("Couldn't add value")
+	}
+
+	err = l.AddFirst(INTVAL(2))
+	if err != nil {
+		t.Error("Couldn't add value")
+	}
+
+	err = l.AddFirst(INTVAL(3))
+	if err != nil {
+		t.Error("Couldn't add value")
+	}
 
 	c, node = l.Traverse()
 
@@ -54,9 +73,20 @@ func TestAddLast(t *testing.T) {
 		t.Error("LinkedList Is Not Create")
 	}
 
-	l.AddLast(INTVAL(1))
-	l.AddLast(INTVAL(2))
-	l.AddLast(INTVAL(3))
+	err := l.AddLast(INTVAL(1))
+	if err != nil {
+		t.Error("Couldn't add value")
+	}
+
+	err = l.AddLast(INTVAL(2))
+	if err != nil {
+		t.Error("Couldn't add value")
+	}
+
+	err = l.AddLast(INTVAL(3))
+	if err != nil {
+		t.Error("Couldn't add value")
+	}
 
 	if !l.head.value.equal(INTVAL(1)) || !l.head.next.value.equal(INTVAL(2)) || !l.head.next.next.value.equal(INTVAL(3)) {
 		t.Error("Add Failure")
@@ -74,7 +104,7 @@ func TestAddAfter(t *testing.T) {
 		t.Error("AddAfter Should Not Be Insert")
 	}
 
-	l.AddLast(INTVAL(1))
+	err = l.AddLast(INTVAL(1))
 	err = l.AddAfter(INTVAL(1), INTVAL(2))
 	if err != nil {
 		t.Error("AddAfter Should Not Be Any Error")
@@ -98,7 +128,7 @@ func TestAddBefore(t *testing.T) {
 		t.Error("AddBefore Should Not Be Insert")
 	}
 
-	l.AddLast(INTVAL(1))
+	err = l.AddLast(INTVAL(1))
 	err = l.AddBefore(INTVAL(1), INTVAL(2))
 	if err != nil {
 		t.Error("AddBefore Should Not Be Any Error")
@@ -121,19 +151,19 @@ func TestDelete(t *testing.T) {
 	if err == nil {
 		t.Error("Delete Operation Error")
 	}
-	l.AddLast(STRVAL("aa"))
-	l.AddLast(STRVAL("bb"))
-	l.AddLast(STRVAL("cc"))
-	l.Delete(STRVAL("bb"))
+	err = l.AddLast(STRVAL("aa"))
+	err = l.AddLast(STRVAL("bb"))
+	err = l.AddLast(STRVAL("cc"))
+	err = l.Delete(STRVAL("bb"))
 
 	if !l.head.value.equal(STRVAL("aa")) || !l.head.next.value.equal(STRVAL("cc")) || l.head.next.next != nil {
 		t.Error("AddBefore Failure")
 	}
-	l.Delete(STRVAL("cc"))
+	err = l.Delete(STRVAL("cc"))
 	if !l.head.value.equal(STRVAL("aa")) || l.head.next != nil {
 		t.Error("AddBefore Failure")
 	}
-	l.Delete(STRVAL("aa"))
+	err = l.Delete(STRVAL("aa"))
 	if l.head != nil {
 		t.Error("AddBefore Failure")
 	}
@@ -147,17 +177,17 @@ func TestIsCircular(t *testing.T) {
 		t.Fatal("Fatal Error In Test Code")
 	}
 
-	l.AddLast(STRVAL("a"))
+	err = l.AddLast(STRVAL("a"))
 
 	if circular == true {
 		t.Error("It Should Not Be Circular")
 	}
 
-	l.AddLast(STRVAL("b"))
-	l.AddLast(STRVAL("c"))
-	l.AddLast(STRVAL("d"))
-	l.AddLast(STRVAL("e"))
-	l.AddLast(STRVAL("f"))
+	err = l.AddLast(STRVAL("b"))
+	err = l.AddLast(STRVAL("c"))
+	err = l.AddLast(STRVAL("d"))
+	err = l.AddLast(STRVAL("e"))
+	err = l.AddLast(STRVAL("f"))
 
 	circular, err = l.IsCircular()
 	if err != nil {
