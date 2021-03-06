@@ -21,16 +21,8 @@ func TestAddFirst(t *testing.T) {
 	if err != nil {
 		t.Error("Couldn't add value")
 	}
-
 	err = l.AddFirst(INTVAL(2))
-	if err != nil {
-		t.Error("Couldn't add value")
-	}
-
 	err = l.AddFirst(INTVAL(3))
-	if err != nil {
-		t.Error("Couldn't add value")
-	}
 
 	if !l.head.value.equal(INTVAL(3)) || !l.head.next.value.equal(INTVAL(2)) || !l.head.next.next.value.equal(INTVAL(1)) {
 		t.Error("Add Failure")
@@ -51,14 +43,7 @@ func TestTraverse(t *testing.T) {
 	}
 
 	err = l.AddFirst(INTVAL(2))
-	if err != nil {
-		t.Error("Couldn't add value")
-	}
-
 	err = l.AddFirst(INTVAL(3))
-	if err != nil {
-		t.Error("Couldn't add value")
-	}
 
 	c, node = l.Traverse()
 
@@ -79,14 +64,7 @@ func TestAddLast(t *testing.T) {
 	}
 
 	err = l.AddLast(INTVAL(2))
-	if err != nil {
-		t.Error("Couldn't add value")
-	}
-
 	err = l.AddLast(INTVAL(3))
-	if err != nil {
-		t.Error("Couldn't add value")
-	}
 
 	if !l.head.value.equal(INTVAL(1)) || !l.head.next.value.equal(INTVAL(2)) || !l.head.next.next.value.equal(INTVAL(3)) {
 		t.Error("Add Failure")
