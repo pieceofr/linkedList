@@ -17,12 +17,20 @@ func TestAddFirst(t *testing.T) {
 		t.Error("LinkedList Is Not Create")
 	}
 
-	err := l.AddFirst(INTVAL(1))
-	if err != nil {
+	testerr := l.AddFirst(INTVAL(1))
+	if testerr != nil {
 		t.Error("Couldn't add value")
 	}
-	err = l.AddFirst(INTVAL(2))
-	err = l.AddFirst(INTVAL(3))
+
+	testerr = l.AddFirst(INTVAL(2))
+	if testerr != nil {
+		t.Error("Couldn't add value")
+	}
+
+	testerr = l.AddFirst(INTVAL(3))
+	if testerr != nil {
+		t.Error("Couldn't add value")
+	}
 
 	if !l.head.value.equal(INTVAL(3)) || !l.head.next.value.equal(INTVAL(2)) || !l.head.next.next.value.equal(INTVAL(1)) {
 		t.Error("Add Failure")
@@ -37,13 +45,20 @@ func TestTraverse(t *testing.T) {
 		t.Error("count should be 0 and last node should be nil")
 	}
 
-	err := l.AddFirst(INTVAL(1))
-	if err != nil {
+	testerr := l.AddFirst(INTVAL(1))
+	if testerr != nil {
 		t.Error("Couldn't add value")
 	}
 
-	err = l.AddFirst(INTVAL(2))
-	err = l.AddFirst(INTVAL(3))
+	testerr = l.AddFirst(INTVAL(2))
+	if testerr != nil {
+		t.Error("Couldn't add value")
+	}
+
+	testerr = l.AddFirst(INTVAL(3))
+	if testerr != nil {
+		t.Error("Couldn't add value")
+	}
 
 	c, node = l.Traverse()
 
